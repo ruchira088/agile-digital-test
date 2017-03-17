@@ -6,6 +6,9 @@ case class Coordinates(x: Int, y: Int, direction: Direction) {
 
 object Coordinates
 {
+  /**
+    * Converts a string into coordinates
+    */
   def convertToCoordinates(coordinates: String): Coordinates =
   {
     try {
@@ -13,7 +16,8 @@ object Coordinates
 
       Coordinates(x.toInt, y.toInt, Direction.convertToDirection(directionString))
     } catch {
-      case _: MatchError => throw new Exception("Cats")
+      case _: MatchError => throw new Exception("Unable to convert to coordinates")
+      case error => throw error
     }
   }
 }

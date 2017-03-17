@@ -21,16 +21,25 @@ case object West extends Direction {
 object Direction {
   val VALUES: List[Direction] = List(North, East, South, West)
 
+  /**
+    * Rotate right from the passed-in direction
+    */
   def rotateRight(direction: Direction): Direction =
   {
     rotate(direction, index => if (index + 1 == VALUES.length) 0 else (index + 1))
   }
 
+  /**
+    * Rotate left from the passed-in direction
+    */
   def rotateLeft(direction: Direction): Direction =
   {
     rotate(direction, index => if(index - 1 < 0) VALUES.length - 1 else (index - 1))
   }
 
+  /**
+    * Converts a string into a direction
+    */
   def convertToDirection(directionString: String): Direction = {
     val direction = VALUES.find(value => value.toString == directionString)
 

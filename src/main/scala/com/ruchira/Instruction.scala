@@ -8,6 +8,9 @@ case object Move extends Instruction
 
 object Instruction
 {
+  /**
+    * Converts a single length string into an instruction
+    */
   def convertToInstruction(instruction: String): Instruction =
   {
     instruction match {
@@ -18,6 +21,9 @@ object Instruction
     }
   }
 
+  /**
+    * Move forward from the passed-in coordinates
+    */
   def move(position: Coordinates): Coordinates =
   {
     position match {
@@ -28,6 +34,9 @@ object Instruction
     }
   }
 
+  /**
+    * Performs an instruction
+    */
   def perform(position: Coordinates, instruction: Instruction): Coordinates =
   {
     val Coordinates(x, y, direction) = position
