@@ -14,7 +14,7 @@ The position is made up of two integers and a letter separated by spaces, corres
 
 The inputs for the application is passed via `input.txt` in the root project directory.
 
-Example
+##### Example
 
 ```text
 5 5
@@ -38,7 +38,7 @@ The output for each explorer is its final co-ordinates and heading.
 
 The output will be written to `output.txt` in the root project directory.
 
-Example
+#### Example
 
 ```text
 1 3 N
@@ -48,6 +48,7 @@ Example
 ## Running Tests
 
 Navigate to root directory of the project and type the following the command line
+
 ```sh
 sbt test
 
