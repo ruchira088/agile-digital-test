@@ -25,9 +25,16 @@ MMRMMRMRRM
 
 ```
 
+Once the inputs have been set in `input.txt`, navigate to the root directory and type the following the run the application
+
+```sh
+sbt run
+
+```
+
 ### Output
 
-The output for each explorer should be its final co-ordinates and heading.
+The output for each explorer is its final co-ordinates and heading.
 
 The output will be written to `output.txt` in the root project directory.
 
@@ -36,13 +43,6 @@ Example
 ```text
 1 3 N
 5 1 E
-```
-
-Once the inputs have been set in `input.txt`, navigate to the root directory and type the following the run the application
-
-```sh
-sbt run
-
 ```
 
 ## Running Tests
