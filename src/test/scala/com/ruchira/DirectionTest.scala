@@ -1,6 +1,7 @@
 package com.ruchira
 
 import org.scalatest.FunSpec
+import Direction._
 
 class DirectionTest extends FunSpec
 {
@@ -8,10 +9,10 @@ class DirectionTest extends FunSpec
   {
     it("Strings converted to Directions Successfully")
     {
-      assert(Direction.convertToDirection("N").equals(North))
-      assert(Direction.convertToDirection("E").equals(East))
-      assert(Direction.convertToDirection("S").equals(South))
-      assert(Direction.convertToDirection("W").equals(West))
+      assertResult(North)(convertToDirection("N"))
+      assertResult(East)(convertToDirection("E"))
+      assertResult(South)(convertToDirection("S"))
+      assertResult(West)(convertToDirection("W"))
     }
   }
 
@@ -19,10 +20,10 @@ class DirectionTest extends FunSpec
   {
     it("Rotated left successfully")
     {
-      assert(Direction.rotateLeft(North).equals(West))
-      assert(Direction.rotateLeft(West).equals(South))
-      assert(Direction.rotateLeft(South).equals(East))
-      assert(Direction.rotateLeft(East).equals(North))
+      assertResult(West)(rotateLeft(North))
+      assertResult(South)(rotateLeft(West))
+      assertResult(East)(rotateLeft(South))
+      assertResult(North)(rotateLeft(East))
     }
   }
 
@@ -30,10 +31,10 @@ class DirectionTest extends FunSpec
   {
     it("Rotated right successfully")
     {
-      assert(Direction.rotateRight(North).equals(East))
-      assert(Direction.rotateRight(East).equals(South))
-      assert(Direction.rotateRight(South).equals(West))
-      assert(Direction.rotateRight(West).equals(North))
+      assertResult(East)(rotateRight(North))
+      assertResult(South)(rotateRight(East))
+      assertResult(West)(rotateRight(South))
+      assertResult(North)(rotateRight(West))
     }
   }
 

@@ -1,6 +1,7 @@
 package com.ruchira
 
 import org.scalatest.FunSpec
+import Instruction._
 
 class InstructionTest extends FunSpec
 {
@@ -8,9 +9,9 @@ class InstructionTest extends FunSpec
   {
     it("Successfully converted Strings to Instructions")
     {
-      assert(Instruction.convertToInstruction("M").equals(Move))
-      assert(Instruction.convertToInstruction("R").equals(Right))
-      assert(Instruction.convertToInstruction("L").equals(Left))
+      assertResult(Move)(convertToInstruction("M"))
+      assertResult(Right)(convertToInstruction("R"))
+      assertResult(Left)(convertToInstruction("L"))
     }
   }
 
@@ -18,10 +19,10 @@ class InstructionTest extends FunSpec
   {
     it("Successfully moved")
     {
-      assert(Instruction.move(Coordinates(1, 1, North)).equals(Coordinates(1, 2, North)))
-      assert(Instruction.move(Coordinates(2, 5, East)).equals(Coordinates(3, 5, East)))
-      assert(Instruction.move(Coordinates(6, 3, South)).equals(Coordinates(6, 2, South)))
-      assert(Instruction.move(Coordinates(4, 7, West)).equals(Coordinates(3, 7, West)))
+      assertResult(Coordinates(1, 2, North))(move(Coordinates(1, 1, North)))
+      assertResult(Coordinates(3, 5, East))(move(Coordinates(2, 5, East)))
+      assertResult(Coordinates(6, 2, South))(move(Coordinates(6, 3, South)))
+      assertResult(Coordinates(3, 7, West))(move(Coordinates(4, 7, West)))
     }
   }
 
@@ -29,9 +30,9 @@ class InstructionTest extends FunSpec
   {
     it("Performed instruction successfully")
     {
-      assert(Instruction.perform(Coordinates(1, 1, North), Move).equals(Coordinates(1, 2, North)))
-      assert(Instruction.perform(Coordinates(1, 1, North), Right).equals(Coordinates(1, 1, East)))
-      assert(Instruction.perform(Coordinates(1, 1, North), Left).equals(Coordinates(1, 1, West)))
+      assertResult(Coordinates(1, 2, North))(perform(Coordinates(1, 1, North), Move))
+      assertResult(Coordinates(1, 1, East))(perform(Coordinates(1, 1, North), Right))
+      assertResult(Coordinates(1, 1, West))(perform(Coordinates(1, 1, North), Left))
     }
   }
 }
