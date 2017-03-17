@@ -17,7 +17,6 @@ object Coordinates
       Coordinates(x.toInt, y.toInt, Direction.convertToDirection(directionString))
     } catch {
       case _: MatchError => throw new Exception("Unable to convert to coordinates")
-      case error => throw error
     }
   }
 }
