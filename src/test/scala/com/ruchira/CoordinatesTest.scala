@@ -4,7 +4,7 @@ import org.scalatest.FunSpec
 
 class CoordinatesTest extends FunSpec
 {
-  describe("Convert a String into Coordinates")
+  describe("convertToCoordinates(String)")
   {
     it("Strings converted to Coordinates successfully")
     {

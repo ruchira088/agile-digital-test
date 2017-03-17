@@ -4,7 +4,7 @@ import org.scalatest.FunSpec
 
 class DirectionTest extends FunSpec
 {
-  describe("Convert String to Direction")
+  describe("convertToDirection(String)")
   {
     it("Strings converted to Directions Successfully")
     {
@@ -15,9 +15,9 @@ class DirectionTest extends FunSpec
     }
   }
 
-  describe("Rotate left")
+  describe("rotateLeft(Direction)")
   {
-    it("")
+    it("Rotated left successfully")
     {
       assert(Direction.rotateLeft(North).equals(West))
       assert(Direction.rotateLeft(West).equals(South))
@@ -26,9 +26,9 @@ class DirectionTest extends FunSpec
     }
   }
 
-  describe("Rotate right")
+  describe("rotateRight(Direction)")
   {
-    it("")
+    it("Rotated right successfully")
     {
       assert(Direction.rotateRight(North).equals(East))
       assert(Direction.rotateRight(East).equals(South))

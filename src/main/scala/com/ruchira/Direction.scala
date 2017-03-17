@@ -1,6 +1,6 @@
 package com.ruchira
 
-sealed trait Direction {}
+sealed trait Direction
 
 case object North extends Direction {
   override def toString: String = "N"
